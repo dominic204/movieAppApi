@@ -1,5 +1,7 @@
 const express = require("express");
 const mongoose = require("mongoose");
+const cors = require("cors");
+
 
 const userRoutes = require("./routes/user");
 const movieRoutes = require("./routes/movie");
@@ -9,6 +11,7 @@ const port = 4000;
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+app.use(cors());
 
 mongoose.connect('mongodb+srv://admin:admin1234@dominic.rbrnew9.mongodb.net/Movie-Catalog-System?retryWrites=true&w=majority&appName=Dominic');
 
